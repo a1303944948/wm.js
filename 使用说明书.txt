@@ -1,0 +1,24 @@
+一：元素选择器
+	1：ID选择器    	d('id');   传入一个元素ID	必传
+	2：class选择器 	c('class') 传入一个class名称	必传
+	3：name选择器  	n('name')  传入一个name名称	必传
+
+二：元素操作
+	1：元素创建	creat('div')传入一个需要被创建的元素名称 必传
+	2：弹窗提醒	alern(text,name,btn,btns)
+		a：text 该参数为弹窗提示文（不传默认弹出为空）	 	非必传
+		b：name 该参数为弹窗顶部名称（不传默认为‘温馨提醒’）	非必传
+		c：btn	该参数为确定按钮文字（不传或传空默认为‘确定’）非必传
+		d：btns	该参数为取消按钮文字（不传咋不显示按钮，传空默认为‘取消’）非必传
+	3：加载事件	loading(text)传入一个加载时的文本文字
+	3a：加载事件被调用后必须执行回调loadingClear（）来清除加载事件产生的残余，否则将影响页面性能
+
+三：ajax请求
+	1：ajax（type，url，data，succ，error，json，async）
+		a：type传入一个post或者get来定义此次请求类型			必传
+		b：url传入一个请求的url链接					必传
+		c：data作用为要传递的数据  基础格式为（a='123'&b='456'&c=）	必传
+		d：succ为function（）{}意思为当请求成功时返回的事件		必传
+		e：error为function（）{}意思为当请求失败时返回的事件		必传
+		f：json为传入一个‘json’是否将返回数据转换为json数据		非必传
+		g：async为传入一个true或者false，意思为异步或者是同步请求	非必传
