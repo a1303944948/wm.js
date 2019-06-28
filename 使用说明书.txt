@@ -54,7 +54,8 @@
 六：框架式方法封装	基础下拉框，复选下拉框，日期(时间)选择器，分页功能
 	1：WmStartSelect()	基础下拉框
 		调用该方法前需要在页面上加入input框class为wm_select并且拥有自定义属性data-select的元素如下(可同时应用多个选择框，最后调用即可);
-		<input class="wm_select" data-select="[{name: '急件',value: 1},{name: '非急件',value: 0}]" type="text"/>
+		<input class="wm_select" data-select="[{name: '急件',value: 1},{name: '非急件',value: 0}]" type="text"/>该选择器将默认选择第一个选项
+		如果为必填项  为input加入data-type="no_default"属性，将不会显示请选择选项
 	2：WmCheckSelect()	复选下拉框 暂未投入使用，故无文档，带作者使用过后完善该部分
 	3：WmStartDatapicker()	日期(时间)选择器封装 尚在开发中...
 	4：WmPageMark()		分页功能
@@ -64,5 +65,7 @@
 			b：data-width		定义该控件的宽度，不传默认为480px，请自行选择合适自己的宽度使用，必须携带单位例如500px	非必传
 			c：data-height		定义该控件的高度，不传默认为40px，请自行选择合适自己的高度使用，必须携带单位例如40px	非必传
 		并且需要在JS中创建方法如下：
-		WmPageMarkStart()	此方法是为给class为wm_pagemark元素执行更改列表总数量以及渲染相关dom方法，单页面支持多个分页同时存在
+		WmPageMarkStart(num,type)	此方法是为给class为wm_pagemark元素执行更改列表总数量以及渲染相关dom方法，单页面支持多个分页同时存在
+			a：num		该值为页码
+			b：type		该值为同一个页面存在多个分页时使用
 			注：WmPageMark()方法应该在该方法内在列表总数量被成功更改后被调用
